@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Senior software engineer on Antoni Karasavov</title>
+    <link>http://tonkata.com/</link>
+    <description>Recent content in Senior software engineer on Antoni Karasavov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 26 Jun 2020 12:40:19 +0100</lastBuildDate>
+    
+	<atom:link href="http://tonkata.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Work</title>
+      <link>http://tonkata.com/work/</link>
+      <pubDate>Fri, 26 Jun 2020 16:56:41 +0100</pubDate>
+      
+      <guid>http://tonkata.com/work/</guid>
+      <description>Metropolitan Thames Valley MTVH needed help moving their stack of Rails apps from being built by an agency to developing them in-house.
+My role required transferring knowledge to the in-house dev team (capability building I think is the buzz word). I mentored and provided guidance to junior engineers, schooling them in various programming topics - both practical and theoretical, while taking part in regular sprint work.
+I&amp;rsquo;ve extended my contract to oversee the completion of the transition, finish some important improvements on their residents&amp;rsquo; portal, and onboard my worthy two senior successors who I also helped in hiring.</description>
+    </item>
+    
+  </channel>
+</rss>
