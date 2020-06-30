@@ -52,7 +52,7 @@ if (!doNotTrack) {
 <body>
   <main role="main" class="root">
     
-      <svg width="100px" height="100px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="100px" height="100px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
       <stop stop-color="#EEEEEE" offset="0%"></stop>
@@ -75,10 +75,12 @@ if (!doNotTrack) {
     
       <h1 id="hello-im-antoni">Hello, I&rsquo;m Antoni</h1>
 <p>I&rsquo;m a senior software engineer and I write code for the web and ruby backends.</p>
-<p>Currently <strong>not available</strong> for new projects.</p>
-<p>I have worked on <a href="/work/">these things</a>.</p>
+<p>I have worked on <a href="/work/">these things</a>. Currently <strong>not available</strong> for new projects.</p>
 
     
+
+    <small>Pssst, how about a quick <a href="#" id="play-snake">game of snake</a>?</small>
+
     <nav>
       
 
@@ -108,6 +110,27 @@ if (!doNotTrack) {
 
     </nav>
   </main>
+
+  
+  <div  id="snake" >
+  <canvas></canvas>
+  <div class="snake-cell-color"></div>
+  <div class="snake-dead-color"></div>
+  <div class="snake-border-color"></div>
+  <div class="snake-food-color"></div>
+  <div class="snake-text-color"></div>
+  <div class="snake-begin-modal invisible"></div>
+  <div class="snake-end-modal invisible">
+    <h3 class="snake-hi-score"></h3>
+    <a href="#" class="button" id="replay-snake">Play again?</a>
+    <a href="#" id="stop-snake">Nah, I've had enough.</a>
+  </div>
+</div>
+
+  
+
+<script src="/dist/app.js"></script>
+
 </body>
 
 </html>

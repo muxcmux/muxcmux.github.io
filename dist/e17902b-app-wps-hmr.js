@@ -1,0 +1,14 @@
+webpackHotUpdate("app",{
+
+/***/ "./js/snake.js":
+/*!*********************!*\
+  !*** ./js/snake.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module build failed (from ../node_modules/babel-loader/lib/index.js):\\nSyntaxError: /Users/muxcmux/src/tonkata.com/themes/ayugo/src/js/snake.js: Unexpected token (13:9)\\n\\n\\u001b[0m \\u001b[90m 11 | \\u001b[39m  \\u001b[90m// Snake\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 12 | \\u001b[39m  \\u001b[36mconst\\u001b[39m cw \\u001b[33m=\\u001b[39m \\u001b[35m10\\u001b[39m\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m\\u001b[31m\\u001b[1m>\\u001b[22m\\u001b[39m\\u001b[90m 13 | \\u001b[39m  \\u001b[36mconst\\u001b[39m d\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m    | \\u001b[39m         \\u001b[31m\\u001b[1m^\\u001b[22m\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 14 | \\u001b[39m  \\u001b[36mconst\\u001b[39m food\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 15 | \\u001b[39m  \\u001b[36mconst\\u001b[39m score\\u001b[33m;\\u001b[39m\\u001b[0m\\n\\u001b[0m \\u001b[90m 16 | \\u001b[39m  \\u001b[36mconst\\u001b[39m level\\u001b[33m;\\u001b[39m\\u001b[0m\\n    at Parser._raise (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:754:17)\\n    at Parser.raiseWithData (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:747:17)\\n    at Parser.raise (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:741:17)\\n    at Parser.unexpected (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:8844:16)\\n    at Parser.parseVar (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:11856:18)\\n    at Parser.parseVarStatement (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:11661:10)\\n    at Parser.parseStatementContent (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:11260:21)\\n    at Parser.parseStatement (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:11193:17)\\n    at Parser.parseBlockOrModuleBlockBody (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:11768:25)\\n    at Parser.parseBlockBody (/Users/muxcmux/src/tonkata.com/themes/ayugo/node_modules/@babel/parser/lib/index.js:11754:10)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2pzL3NuYWtlLmpzLmpzIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./js/snake.js\n");
+
+/***/ })
+
+})

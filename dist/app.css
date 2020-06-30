@@ -287,6 +287,8 @@ main.root {
   padding: 1em; }
   main.root > svg {
     margin: 1rem auto; }
+  main.root small {
+    opacity: .5; }
   main.root p strong, main.root p em {
     background: var(--red);
     color: var(--bg-color);
@@ -384,4 +386,49 @@ main.root {
     background: var(--teal); }
   .button:visited {
     color: var(--bg-color); }
+
+#snake canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none; }
+
+#snake .snake-cell-color {
+  color: var(--blue); }
+
+#snake .snake-dead-color {
+  color: var(--red); }
+
+#snake .snake-food-color {
+  color: var(--orange); }
+
+#snake .snake-text-color {
+  color: var(--fg-color); }
+
+#snake .snake-border-color {
+  color: var(--bg-color); }
+
+#snake .snake-end-modal, #snake .snake-begin-modal {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-color);
+  border: 3px solid var(--select-bg);
+  padding: 1em 3em;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  #snake .snake-end-modal *, #snake .snake-begin-modal * {
+    margin: .5em; }
+  #snake .snake-end-modal.invisible, #snake .snake-begin-modal.invisible {
+    display: none; }
+
+#snake .snake-begin-modal {
+  font-family: var(--font-mono);
+  font-size: 2em; }
 
