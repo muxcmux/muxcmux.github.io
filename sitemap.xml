@@ -13,7 +13,22 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/posts/asrock-a300/</loc>
+    <lastmod>2020-04-08T23:44:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2020-04-08T23:44:15+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/apple-photos/</loc>
+    <lastmod>2020-01-06T01:19:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/index.html</loc>
   </url>
   
 </urlset>

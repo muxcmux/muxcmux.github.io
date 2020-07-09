@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Antoni Karasavov  | The Apple Photos library</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+
+<meta name="robots" content="index, follow">
+
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+
+
+<link href="../../app.829f212a0b78c4bd7a6ca5d8241423be5c05dd9bd8de8cf956af142984be3fbf.css" rel="stylesheet" integrity="sha256-gp8hKgt4xL16bKXYJBQjvlwF3ZvY3oz5Vq8UKYS&#43;P78=" />
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-28270884-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  
+</head>
+
+<body>
+  <header>
+  <nav role="navigation">
+    <a href="../../" title="Go to the main page">
+      <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
+      <stop stop-color="#EEEEEE" offset="0%"></stop>
+      <stop stop-color="#D8D8D8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad-dark">
+      <stop stop-color="#33415E" offset="0%"></stop>
+      <stop stop-color="#323A4C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <path d="M0,0 L200,0 L200,200 L0,200 L0,0 Z M20,20 L20,180 L180,180 L180,20 L20,20 Z" id="a-box"></path>
+      <path d="M148.88,146.38 L126.34,146.38 L120.46,130.56 L80.42,130.56 L74.54,146.38 L52,146.38 L87.98,53 L112.9,53 L148.88,146.38 Z M115,113.06 L100.44,72.88 L85.88,113.06 L115,113.06 Z" id="a-a" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>
+    </a>
+  </nav>
+</header>
+  <main role="main">
+    
+<article class="column post">
+  <header>
+    <h1>The Apple Photos library</h1>
+    <time datetime="2020-01-06T01:19:00&#43;01:00">January 6, 2020</time>
+    <span>in</span>
+    <a href="../../posts/">/var/log</a>
+  </header>
+
+  <section class="body"><p>All the information here was compiled by me looking at the library folder, examining the sqlite databases, monitoring changes in files, hexdumping, etc. while playing around with my personal photos collection.</p>
+<p>Do what you want with this, but keep in mind it is unofficial and solely based on my personal observations, therefore it is incomplete and some parts could be plain wrong.</p>
+<p>Apple may change how their software works at any time and without notice.</p>
+<h2 id="start-here">Start here</h2>
+<p>First stop is to navigate to your photos library which is usually located under <code>Pictures</code> in your home folder</p>
+<pre><code>$ cd ~/Pictures/Photos \Library.photoslibrary
+</code></pre>
+<p>Depending on how old your library is and weather you&rsquo;ve migrated from iPhoto or started using Photos straight away, the contents of the library might differ slightly. Some important ones are:</p>
+<ul>
+<li><code>database</code> This is where Photos stores it&rsquo;s sqlite3 databases with the most important one being <code>Photos.sqlite</code></li>
+<li><code>originals</code> Yep, that&rsquo;s all your original, unmodified photos in there</li>
+<li><code>resources</code> This directory seems to hold information on quite a few things:
+<ul>
+<li>files from your iCLoud <em>Shared Albums</em>, both yours and other people&rsquo;s</li>
+<li>edited photos and editing information</li>
+<li>resized copies of original photos</li>
+<li>audit logs</li>
+<li>project files</li>
+<li>other iCloud related files</li>
+</ul>
+</li>
+<li><code>private</code> Looks like these are config, state and cache files. This dir also contains files related to other services in the Apple Photos ecosystem, like the <code>photoanalysisd</code> (you know, the one that always eats a 100% of your CPU exactly when you are in the middle of doing some important CPU intensive work&hellip;)</li>
+</ul>
+<h2 id="database">Database</h2>
+<p>The <code>Photos.sqlite</code> database contains lots of useful information, let&rsquo;s poke around. Browsing the <code>Z_PRIMARYKEY</code> table reveals what I would refer to as <em>Entities</em>. Each record has a name, an id (<code>Z_ENT</code>), <code>Z_SUPER</code> which maps to the entity&rsquo;s parent and some cached counters. I assume these are the various classes in Photos code.</p>
+<p>It&rsquo;s important to note the <code>Z_ENT</code> for an entity, as this is used in other tables to identify the type of a record. For example, on my mac, an <code>Album</code>'s id is <code>26</code>.</p>
+<p>Other tables of interest are:</p>
+<ul>
+<li><code>ZGENERICASSET</code> Records in this table represent your photos</li>
+<li><code>ZGENERICALBUM</code> Album and folder records are stored here</li>
+<li><code>Z_XXASSETS</code> It&rsquo;s a many-to-many relationship table that links photos to albums. The <code>XX</code> part is a number that corresponds to the <code>Album</code> entity from the <code>Z_PRIMARYKEY</code> table, so in my case the name of the table is <code>Z_26ASSETS</code>.</li>
+<li><code>ZADDITIONALATTRIBUTES</code> contains metadata about your images, like dimensions, original filename, the import session, location data, etc.</li>
+<li><code>ZEXTENDEDATTRIBUTES</code> has some more juicy metadata, some of which seems to be pulled off of the <em>EXIF</em>, like aperture, shutter speed, iso, focal length, sample rate for videos, camera and lens make and model, flash info, metering mode and more location data</li>
+<li><code>ZCOMPUTEDATTRIBUTES</code> This one seems to contain magic numbers which I assume are used internally by Photos to further classify your images, like how well you framed your shot, or if it has nice bokeh effect, etc. All some complicated AI shit.</li>
+</ul>
+<p>These <em>ATTRIBUTES</em> tables have foreign keys that link to the corresponding photo (or asset) from the <code>ZGENERICASSET</code> table.</p>
+<p>I&rsquo;ve only had a short peek at other tables, but once you get familiar with the ones mentioned above, it should be quite straightforward to navigate your way around the database if you want to explore further.</p>
+<h2 id="file-locations">File locations</h2>
+<p>Identifying an image is done by looking it up in the <code>ZGENERICASSET</code> table. For example, a photo with <code>ZUUID</code> of <code>D3FE5399-FA6A-47B0-976F-E7CC39EEF747</code> and a <code>ZDIRECTORY</code> equal to <code>D</code> (note that the directory name is the first character of the uuid) will be available under <code>D/D3FE5399-FA6A-47B0-976F-E7CC39EEF747.jpg</code> (also look at <code>ZFILENAME</code> for the exact filename including the extension).</p>
+<p>Apple Photos does non-destructive edits to your images and original copies are kept in the <code>originals</code> folder.</p>
+<p>Edited copies of photos are available in the <code>resources/renders</code> folder along with a <code>plist</code> file for each photo (sharing the same <code>ZUUID</code>) describing the edits. Edit information in these plists is base64 encoded, but decoding and hexdumping results in unreadable gibberish. I assume it&rsquo;s a proprietary encoding.</p>
+<p>Resized photo versions are available in the <code>resources/derivatives</code> folder. These smaller versions include the latest edits applied to the photo.</p>
+<ul>
+<li>a medium sized version is available directly under <code>resources/derivatives</code></li>
+<li>a tiny version (thumbnail) is available in <code>resources/derivatives/masters</code></li>
+</ul>
+<p>To sum up, assuming we made some edits to our photo, the following files will be available to us:</p>
+<ol>
+<li>Original unmodified image: <code>~/Pictures/Photos Library.photoslibrary/originals/D/D3FE5399-FA6A-47B0-976F-E7CC39EEF747.jpg</code></li>
+<li>Image with latest edits applied: <code>~/Pictures/Photos Library.photoslibrary/resources/renders/D/D3FE5399-FA6A-47B0-976F-E7CC39EEF747_suffix.jpg</code></li>
+<li>Smaller version with latest edits applied: <code>~/Pictures/Photos Library.photoslibrary/resources/derivatives/D/D3FE5399-FA6A-47B0-976F-E7CC39EEF747_suffix.jpg</code></li>
+<li>Tiny version with latest edits applied: <code>~/Pictures/Photos Library.photoslibrary/resources/derivatives/masters/D/D3FE5399-FA6A-47B0-976F-E7CC39EEF747_suffix.jpg</code></li>
+</ol>
+<p><em>NOTE 1</em>: <code>_suffix</code> may be different for you and I haven&rsquo;t yet figured out how it&rsquo;s generated.</p>
+<p><em>NOTE 2</em>: If there were no edits done to the original photo, then pt. 2 from the list above will not be available.</p>
+<h3 id="shared-files">Shared files</h3>
+<p>Copies of images you have shared vie Photos are made in <code>resources/cloudsharing</code>. This is also where the files that have been shared by someone else are stored.</p>
+<p>The locations structure is similar to the one for your ordinary photos:</p>
+<ul>
+<li><code>data/YOURPERSONID</code> contains folders for each shared album and inside each folder are the images for that album along with a plist file that contains the album&rsquo;s name and some other metadata.</li>
+<li><code>resources/derivatives/masters</code> contain resized versions of the images grouped in folders</li>
+</ul>
+<p><code>YOURPERSONID</code> folder can be obtained by reading the <code>personID</code> file.</p>
+<p>Another interesting observation I made is that not all photos you share get immediately copied into the <code>cloudsharing</code> directory. For example, I noticed that the copying happened on demand, e.g. when you go and actually browse the files in the <em>Shared Album</em> via Photos app.</p>
+<h2 id="albums">Albums</h2>
+<p>Albums are recorded in <code>ZGENERICALBUM</code>. I&rsquo;ve noticed that this table contains records of multiple <code>Entity</code> types. I tend to keep my photos quite organised and I&rsquo;ve accumulated a bunch of folders with subfolders and then albums in them.</p>
+<p>Browsing that table, it quickly becomes obvious what the fields are used for:</p>
+<ul>
+<li><code>Z_ENT</code> refers to the <code>Entity</code>, like a <code>Folder</code>, a <code>CloudSharedAlbum</code>, <code>Album</code>, etc.</li>
+<li><code>ZTRASHEDSTATE</code> nope, Photos doesn&rsquo;t immediately delete your stuff, just marks it as deleted</li>
+<li><code>ZKEYASSET</code>, <code>ZXX_ASSET</code> and <code>ZXX_CUSTOMKEYASSET</code> is a reference to the cover photo on your album. <code>XX</code> here again is a reference to an entity record from <code>Z_PRIMARYKEY</code></li>
+<li><code>ZTITLE</code>, <code>ZUUID</code> shouldn&rsquo;t need any explanation</li>
+</ul>
+<p>The table describing the relationship between albums and photos/videos is <code>Z_XXASSETS</code>, where <code>XX</code> is again the id of your <code>Album</code> entity. The <code>Z_XXALBUMS</code> in this table is the foreign key to the <code>ZGENERICALBUM</code> record and <code>Z_XXASSETS</code> to the <code>Z_GENERICASSET</code> (<code>XX</code> in this case is the id of the <code>GenericAsset</code> entity). What is <code>Z_FOK_XXASSETS</code>? I don&rsquo;t know.</p>
+</section>
+
+  <section class="comments">
+    
+  </section>
+
+  <aside>
+
+
+
+</aside>
+</article>
+
+  </main>
+  <footer role="contentinfo">
+  <a href="" title="Antoni Karasavov">
+    <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
+      <stop stop-color="#EEEEEE" offset="0%"></stop>
+      <stop stop-color="#D8D8D8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad-dark">
+      <stop stop-color="#33415E" offset="0%"></stop>
+      <stop stop-color="#323A4C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <path d="M0,0 L200,0 L200,200 L0,200 L0,0 Z M20,20 L20,180 L180,180 L180,20 L20,20 Z" id="a-box"></path>
+      <path d="M148.88,146.38 L126.34,146.38 L120.46,130.56 L80.42,130.56 L74.54,146.38 L52,146.38 L87.98,53 L112.9,53 L148.88,146.38 Z M115,113.06 L100.44,72.88 L85.88,113.06 L115,113.06 Z" id="a-a" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>
+  </a>
+</footer>
+  
+
+<script type="text/javascript" src="../../app.f383f4bea425915edfc7cfd51e7949424fa8334166ac00545ed027f902865545.js" integrity="sha256-84P0vqQlkV7fx8/VHnlJQk&#43;oM0FmrABUXtAn&#43;QKGVUU="></script>
+</body>
+
+</html>
