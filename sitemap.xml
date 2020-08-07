@@ -13,12 +13,17 @@
   </url>
   
   <url>
-    <loc>/posts/asrock-a300/</loc>
-    <lastmod>2020-04-08T23:44:15+01:00</lastmod>
+    <loc>/posts/linux-dev-setup/</loc>
+    <lastmod>2020-04-19T00:25:04+01:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
+    <lastmod>2020-04-19T00:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/asrock-a300/</loc>
     <lastmod>2020-04-08T23:44:15+01:00</lastmod>
   </url>
   

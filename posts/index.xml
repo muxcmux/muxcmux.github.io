@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 08 Apr 2020 23:44:15 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2020 00:25:04 +0100</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Development setup on Linux</title>
+      <link>/posts/linux-dev-setup/</link>
+      <pubDate>Sun, 19 Apr 2020 00:25:04 +0100</pubDate>
+      
+      <guid>/posts/linux-dev-setup/</guid>
+      <description>I recently bought a new computer. I couldn&amp;rsquo;t have timed it better even if I wanted to. My everyday laptop has started exhibiting the notorious keyboard problem and brought my productivity down to that of a goldfish. Off to the Apple Store to get it sorted (more on that in a future post) and on with setting up a Linux on my new workstation.
+Last time I tried this exercise was about a decade ago, so stepping into unfamiliar territory I went for something popular - Pop OS!</description>
+    </item>
     
     <item>
       <title>Got a new mini PC. What should I do with it?</title>

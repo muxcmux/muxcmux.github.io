@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Antoni Karasavov  | Development setup on Linux</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+
+<meta name="robots" content="index, follow">
+
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+
+
+<link href="../../app.3eb3a176883808473ef4cd4a9a887dacda1a7fb313e50c90e6ee380ace6ec129.css" rel="stylesheet" integrity="sha256-PrOhdog4CEc&#43;9M1Kmoh9rNoaf7MT5QyQ5u44Cs5uwSk=" />
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-28270884-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  
+</head>
+
+<body>
+  <header>
+  <nav role="navigation">
+    <a href="../../" title="Go to the main page">
+      <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
+      <stop stop-color="#EEEEEE" offset="0%"></stop>
+      <stop stop-color="#D8D8D8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad-dark">
+      <stop stop-color="#33415E" offset="0%"></stop>
+      <stop stop-color="#323A4C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <path d="M0,0 L200,0 L200,200 L0,200 L0,0 Z M20,20 L20,180 L180,180 L180,20 L20,20 Z" id="a-box"></path>
+      <path d="M148.88,146.38 L126.34,146.38 L120.46,130.56 L80.42,130.56 L74.54,146.38 L52,146.38 L87.98,53 L112.9,53 L148.88,146.38 Z M115,113.06 L100.44,72.88 L85.88,113.06 L115,113.06 Z" id="a-a" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>
+    </a>
+  </nav>
+</header>
+  <main role="main">
+    
+<article class="column post">
+  <header>
+    <h1>Development setup on Linux</h1>
+    <time datetime="2020-04-19T00:25:04&#43;01:00">April 19, 2020</time>
+    <span>in</span>
+    <a href="../../posts/">/var/log</a>
+  </header>
+
+  
+    <section class="hero">
+      
+      <img srcset='../../posts/linux-dev-setup/neofetch_hua973d90d1e79ca1494adc71389b7f142_1479446_800x0_resize_box_2.png 800w, ../../posts/linux-dev-setup/neofetch_hua973d90d1e79ca1494adc71389b7f142_1479446_1200x0_resize_box_2.png 1200w, ../../posts/linux-dev-setup/neofetch_hua973d90d1e79ca1494adc71389b7f142_1479446_1600x0_resize_box_2.png 1600w'
+           src="../../posts/linux-dev-setup/neofetch.png">
+           alt="Development setup on Linux">
+      </section>
+  
+
+  <section class="body"><p>I recently bought a <a href="../../posts/asrock-a300/">new computer</a>. I couldn&rsquo;t have timed it better even if I wanted to. My everyday laptop has started exhibiting the <a href="https://www.macrumors.com/guide/butterfly-keyboard-issues/">notorious keyboard problem</a> and brought my productivity down to that of a goldfish. Off to the Apple Store to get it sorted (more on that in a future post) and on with setting up a Linux on my new workstation.</p>
+<p>Last time I tried this exercise was about a decade ago, so stepping into unfamiliar territory I went for something popular - Pop OS!. It&rsquo;s based on Ubuntu, developed by System76, which I have huge respect for, and well suited for software development. Software such as <a href="https://github.com/alacritty/alacritty">Alacritty</a> (which I use on the mac as well) is available from the native package manager. Neat!</p>
+<p>Installing Pop_OS! is a breeze really. You boot from a USB stick and then follow the instructions. Ten minutes in and you have a beautiful working desktop. Time to get some tools installed.</p>
+<p>This attempt to use Linux as a dev workstation has made me realise that almost none of the tools I use day to day are os specific anymore. Originally I was an avid Textmate user, but I&rsquo;ve gone through a few other editors and IDEs, including Sublime, Atom, JetBrains, etc. Today I spend most of the time in VSCode. This is super easy to set up on Pop OS, simply install from the software center.</p>
+<p>Other day to day tools include <code>vim</code> for quickly editing config files or dabbling around when <code>ssh</code>ed to a remote host. As already mentioned, my terminal emulator of choice Alacritty is cross-platform, so no worries there. Multiple terms/splits is handled by <code>tmux</code>. <code>git</code> integration with VSCode is brilliant and combined with a few commands (reverting and rebasing mostly), I have no need for any other tool to handle source control related tasks. Docker feels right at home on Linux (native containers, yay!) and the rest is either browser based or available packaged as an Electron app. The only tool I&rsquo;m missing is Paw, which I&rsquo;ve bought license for a long time ago and use sparsely to test API integrations. Thankfully, there&rsquo;s a myriad of similar tools available cross-platform - Postman, Insomnia, etc.</p>
+<figure class="image">
+<a href="../../posts/linux-dev-setup/desktop.png" style="background: url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAABeUlEQVR4nFyRzW4TQRCEu3p6vDaJIVy48g458P7vwZUTEhKxvb/T3YV2HAHJpz2s1NM/VWXPz9&#43;CuS0LtJhZZLbWMhMQs2pVMh2KjFyWEBEA1QyAWbHrIoOZnj4z2nVeMyli0gnq09OxeYtIFip6sQNIsar7o4yDcp23f8VOklpgBYeq6BSFAgqBCAR7M8mMEJV3ABAigu4Zvgu570T/23VlBoFKHMyspHtSEBH3oVvbIjwjtFg477zOEDEmU2jIANzpkf/tJjKFAqipPX48Zvi6rtvWhmGotRpFapFx3lLEPd/cTbltUu0U0ebWXsYlO809r9NxGKwUVbAetLmUYpHknhNbHwTqOE5Hk9P50&#43;02Sqa21VQpsi2LiSBI35JJQnJvfvUcivOXr8dITD9PB10lPd0ppewZxOxGZvN4b/T96uSvH98j4/zwYRpv0zS5&#43;9&#43;qAlaVewg9OnaHFUqhkFbrw6O9/L5eLpdabf/MPLzsUlVF/gQAAP//Q24NfJowqMkAAAAASUVORK5CYII=);">
+  <img loading="lazy"
+        srcset='../../posts/linux-dev-setup/desktop_hu5841470a8d08396a5f1cdac8aeabe328_1518121_800x0_resize_box_2.png 800w, ../../posts/linux-dev-setup/desktop_hu5841470a8d08396a5f1cdac8aeabe328_1518121_1200x0_resize_box_2.png 1200w, ../../posts/linux-dev-setup/desktop_hu5841470a8d08396a5f1cdac8aeabe328_1518121_1600x0_resize_box_2.png 1600w '
+        src="../../posts/linux-dev-setup/desktop.png"
+  alt='I like the default window tiling manager with this distro'>
+</a>
+  <figcaption class="image-caption">I like the default window tiling manager with this distro</figcaption>
+</figure>
+<p>One of the best parts about getting all these things set up is that all of them use configuration files I can simply transfer over from my mac. Although this replicates my preferred settings, one of the difficulties I find is that osx shortcuts seem to be etched deeply in my muscle memory and I constantly hit the <code>alt</code> key mistaking it for <code>⌘</code> (or <code>Super</code>/<code>Meta</code> in Linux speech) which is the shortcut for the Application Launcher on Pop OS.</p>
+<p>Other software I use for work is either browser based or comes for Linux in the form of an Electron app. We use Slack for comms, Trello for issue tracking/sprint work, GitHub for PRs and e-mail for&hellip; &hellip;well, ignoring things.</p>
+<p>So far it&rsquo;s only been a couple of days since I&rsquo;m rocking this setup, but it seems to hold pretty nicely. I do observe some lagginess with VSCode and other Electron apps, but that&rsquo;s mostly when resizing windows. Given I&rsquo;m pushing a 4K screen with this tiny computer without a gfx card, it&rsquo;s actually quite impressive it handles the way it does.</p>
+</section>
+
+  <section class="comments">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tonkata" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+
+  <aside>
+
+
+
+</aside>
+</article>
+
+  </main>
+  <footer role="contentinfo">
+  <a href="" title="Antoni Karasavov">
+    <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
+      <stop stop-color="#EEEEEE" offset="0%"></stop>
+      <stop stop-color="#D8D8D8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad-dark">
+      <stop stop-color="#33415E" offset="0%"></stop>
+      <stop stop-color="#323A4C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <path d="M0,0 L200,0 L200,200 L0,200 L0,0 Z M20,20 L20,180 L180,180 L180,20 L20,20 Z" id="a-box"></path>
+      <path d="M148.88,146.38 L126.34,146.38 L120.46,130.56 L80.42,130.56 L74.54,146.38 L52,146.38 L87.98,53 L112.9,53 L148.88,146.38 Z M115,113.06 L100.44,72.88 L85.88,113.06 L115,113.06 Z" id="a-a" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>
+  </a>
+</footer>
+  
+
+<script type="text/javascript" src="../../app.d07e113c4aad3938c8e514af2871c55fa8775f37e98d996238febc200b136fe6.js" integrity="sha256-0H4RPEqtOTjI5RSvKHHFX6h3XzfpjZliOP68IAsTb&#43;Y="></script>
+</body>
+
+</html>
