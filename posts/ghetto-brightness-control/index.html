@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+
+<head>
+  
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<title>Antoni Karasavov  | Ghetto Brightness Control</title>
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+
+
+<meta name="robots" content="index, follow">
+
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+
+
+<link href="../../app.043b85ce430bf653a56577e42e12efd3729c6611bcefc60c9af3afa97a44a96b.css" rel="stylesheet" integrity="sha256-BDuFzkML9lOlZXfkLhLv03KcZhG878YMmvOvqXpEqWs=" />
+
+
+
+
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-28270884-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  
+</head>
+
+<body>
+  <header>
+  <nav role="navigation">
+    <a href="../../" title="Go to the main page">
+      <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
+      <stop stop-color="#EEEEEE" offset="0%"></stop>
+      <stop stop-color="#D8D8D8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad-dark">
+      <stop stop-color="#33415E" offset="0%"></stop>
+      <stop stop-color="#323A4C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <path d="M0,0 L200,0 L200,200 L0,200 L0,0 Z M20,20 L20,180 L180,180 L180,20 L20,20 Z" id="a-box"></path>
+      <path d="M148.88,146.38 L126.34,146.38 L120.46,130.56 L80.42,130.56 L74.54,146.38 L52,146.38 L87.98,53 L112.9,53 L148.88,146.38 Z M115,113.06 L100.44,72.88 L85.88,113.06 L115,113.06 Z" id="a-a" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>
+    </a>
+  </nav>
+</header>
+  <main role="main">
+    
+<article class="column post">
+  <header>
+    <h1>Ghetto Brightness Control</h1>
+    <time datetime="2020-05-20T17:23:17&#43;01:00">May 20, 2020</time>
+    <span>in</span>
+    <a href="../../posts/">/var/log</a>
+  </header>
+
+  
+
+  <section class="body"><p>This is the second post in the series where I&rsquo;m trying to switch away from the mac for a while.</p>
+<p>One of the things I miss is the ability to adjust brightness of my monitor with the multimedia keyboard keys. When at home, my mac is usually hooked up to a 22&rdquo; LG UltraFine, which controls its brightness automatically based on the ambient light sensor on the laptop, or I could adjust it by holding <code>ctrl</code> and using the brigthness keys on my MX Keys keyboard. If I plug the laptop into my Dell (which is usually hooked to the Linux desktop), I then use a tiny tool called <a href="https://github.com/MonitorControl/MonitorControl">MonitorControl</a> to control the brightness with the multimedia keys. I can&rsquo;t do that on the Linux desktop.</p>
+<figure class="image">
+<a href="../../posts/ghetto-brightness-control/brightness-slider.png" style="background-image: url(data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAAuUlEQVR4nESPTU4DMQyF33MySQhiQbkAYsHfZbkBC9iy4FSVWE4nFUzb&#43;KGZImHJXlif7O/Fu/snAMJ/cW0jtG5JEqiXNcV4UUpJAd5rreM48uXto7tcsjMFBluO1WQORDNJn&#43;&#43;vkAiRTMMwz/PhMD88PscQCHJYX3Utswx2csCYjSkYhOP3XrUylwy0afrabgFcb27i7ebq59S7&#43;9H/3G0NIS3C0Shpas13O5dKzvvWQghn8jcAAP//wWlK8ZtbLfgAAAAASUVORK5CYII=);">
+  <img loading="lazy"
+        srcset='../../posts/ghetto-brightness-control/brightness-slider_hu0039f9417ae8202c177c55ceb44de043_93318_800x0_resize_box_2.png 800w, ../../posts/ghetto-brightness-control/brightness-slider_hu0039f9417ae8202c177c55ceb44de043_93318_1200x0_resize_box_2.png 1200w, ../../posts/ghetto-brightness-control/brightness-slider_hu0039f9417ae8202c177c55ceb44de043_93318_1600x0_resize_box_2.png 1600w '
+        src="../../posts/ghetto-brightness-control/brightness-slider.png"
+  alt='Tapping the brightness buttons does move the slider in the taskbar but the monitor&#39;s brightness remains unchanged.'>
+</a>
+  <figcaption class="image-caption">Tapping the brightness buttons does move the slider in the taskbar but the monitor&#39;s brightness remains unchanged.</figcaption>
+</figure>
+<p>I did a bit of research online and the general consensus seems to be that you need a specific kernel extension to make it work for your particular setup. Screw that - there&rsquo;s gotta be another way. Digging a bit further reveals the way MonitorControl works on the mac is by talking to the monitor with a protocol called <a href="https://en.wikipedia.org/wiki/Display_Data_Channel">DDC/CI</a>, or Display Data Channel / Command Interface. It turns out <a href="https://www.ddcutil.com"><code>ddcutil</code></a> for Linux does just that.</p>
+<p>It has a super simple command line interface. If you have more than one screen attached to your computer, you will need to work out which monitor&rsquo;s brightness you&rsquo;ll want to control:</p>
+<pre><code>$ ddcutil detect
+</code></pre>
+<p>Next run</p>
+<pre><code>$ ddcutil capabilities
+</code></pre>
+<p>and make a note of the number of the feature you&rsquo;d like to control. On my machine brightness is <code>10</code>, so to change it, the command is simply:</p>
+<pre><code>$ ddcutil setvcp 10 50
+</code></pre>
+<p>where the argument after <code>setvcp</code> is the code for the brightness VCP feature, and the next one is the desired brightness value between 0-100. Easy!</p>
+<p>Ok, so if there&rsquo;s a way to run this command every time I hit one of the brightness keys, then my all my troubles are over. I could set up a standard Ubuntu keyboard key assignment, e.g. pressing <code>Meta</code> + <code>+</code> would increase brightness, but I want to use the media keys for that.</p>
+<p>If you read carefully, I did mention that my brightness multimedia keys are already moving the brightness slider back and forth. Luckily Pop_OS! stores this slider&rsquo;s value in a file</p>
+<pre><code>$ cat /sys/class/backlight/acpi_video0/brightness
+</code></pre>
+<p>That&rsquo;s right, try changing the slider either with your mouse or with the keyboard and watch the contents of the file change. Another file stores the maximum value: <code>/sys/class/backlight/acpi_video0/max_brightness</code>. Nice! Let&rsquo;s put that in a script we can call once we have set our brightness to the desired level.</p>
+<div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="ch">#!/bin/env ruby</span>
+<span class="n">slider_current</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;/sys/class/backlight/acpi_video0/brightness&#39;</span><span class="p">)</span>
+<span class="n">slider_max</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;/sys/class/backlight/acpi_video0/max_brightness&#39;</span><span class="p">)</span>
+
+<span class="n">brightness_max</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="n">ratio</span> <span class="o">=</span> <span class="nb">Float</span><span class="p">(</span><span class="n">slider_current</span><span class="p">)</span> <span class="o">/</span> <span class="nb">Float</span><span class="p">(</span><span class="n">slider_max</span><span class="p">)</span>
+
+<span class="n">brightness</span> <span class="o">=</span> <span class="p">(</span><span class="n">ratio</span> <span class="o">*</span> <span class="n">brightness_max</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span>
+
+<span class="sb">`ddcutil setvcp 10 </span><span class="si">#{</span><span class="n">brightness</span><span class="si">}</span><span class="sb">`</span></code></pre></div>
+<p>Move the slider and run your script. Sweet! Now all we need is something that will run our script everytime the slider changes. I&rsquo;ll use a Rust program called <code>watchexec</code> which does exactly what you&rsquo;d think - it watches a file for changes and runs a command everytime it does. Time to put all that in a <code>systemd</code> service so it runs on the background at boot. Let&rsquo;s create a new service:</p>
+<pre><code>[Unit]
+Description=Ghetto brightness control
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=~/.cargo/bin/watchexec -w /sys/class/backlight/acpi_video0/brightness /usr/local/bin/ghetto-brightness-control
+[Install]
+WantedBy=default.target
+</code></pre>
+<p>You might need to expand <code>~</code> to the full home path and obviously substitute with the correct path to your script, but the rest should be more or less the same. Save that under <code>~/.local/share/systemd/user/ghetto-brightness-control.service</code> and then enable it:</p>
+<pre><code>$ sudo systemctl --user enable ghetto-brightness-control.service
+</code></pre>
+<p>Well done! Now you can control the brightness of the monitor either by dragging the slider or tapping the multimedia keys.</p>
+</section>
+
+  
+  
+    <h5 class="mt-4">Other entries in <a href="../../series/linux-as-an-alternative-to-mac-for-work/">Linux as an alternative to mac for work</a></h5>
+
+    <section class="series">
+      
+        <ul>
+          
+            
+          
+            
+              <li><a href="../../posts/linux-dev-setup/">Development setup on Linux</a></li>
+            
+          
+        </ul>
+      
+    </section>
+  
+
+
+
+  <section class="comments">
+    
+  </section>
+
+  <aside>
+
+
+
+</aside>
+</article>
+
+  </main>
+  <footer role="contentinfo">
+  <a href="" title="Antoni Karasavov">
+    <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
+      <stop stop-color="#EEEEEE" offset="0%"></stop>
+      <stop stop-color="#D8D8D8" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad-dark">
+      <stop stop-color="#33415E" offset="0%"></stop>
+      <stop stop-color="#323A4C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g>
+      <path d="M0,0 L200,0 L200,200 L0,200 L0,0 Z M20,20 L20,180 L180,180 L180,20 L20,20 Z" id="a-box"></path>
+      <path d="M148.88,146.38 L126.34,146.38 L120.46,130.56 L80.42,130.56 L74.54,146.38 L52,146.38 L87.98,53 L112.9,53 L148.88,146.38 Z M115,113.06 L100.44,72.88 L85.88,113.06 L115,113.06 Z" id="a-a" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>
+  </a>
+</footer>
+  
+
+<script type="text/javascript" src="../../app.d07e113c4aad3938c8e514af2871c55fa8775f37e98d996238febc200b136fe6.js" integrity="sha256-0H4RPEqtOTjI5RSvKHHFX6h3XzfpjZliOP68IAsTb&#43;Y="></script>
+</body>
+
+</html>

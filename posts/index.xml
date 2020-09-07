@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 19 Apr 2020 00:25:04 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 17:23:17 +0100</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ghetto Brightness Control</title>
+      <link>/posts/ghetto-brightness-control/</link>
+      <pubDate>Wed, 20 May 2020 17:23:17 +0100</pubDate>
+      
+      <guid>/posts/ghetto-brightness-control/</guid>
+      <description>This is the second post in the series where I&amp;rsquo;m trying to switch away from the mac for a while.
+One of the things I miss is the ability to adjust brightness of my monitor with the multimedia keyboard keys. When at home, my mac is usually hooked up to a 22&amp;rdquo; LG UltraFine, which controls its brightness automatically based on the ambient light sensor on the laptop, or I could adjust it by holding ctrl and using the brigthness keys on my MX Keys keyboard.</description>
+    </item>
     
     <item>
       <title>Development setup on Linux</title>
