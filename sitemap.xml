@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>/series/linux-as-an-alternative-to-mac-for-work/</loc>
+    <lastmod>2020-04-19T00:25:04+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
     <lastmod>2020-04-19T00:25:04+01:00</lastmod>
   </url>
@@ -30,10 +35,6 @@
   <url>
     <loc>/posts/apple-photos/</loc>
     <lastmod>2020-01-06T01:19:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/index.html</loc>
   </url>
   
 </urlset>
