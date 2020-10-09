@@ -17,7 +17,7 @@
 
 
 
-<link href="../../app.043b85ce430bf653a56577e42e12efd3729c6611bcefc60c9af3afa97a44a96b.css" rel="stylesheet" integrity="sha256-BDuFzkML9lOlZXfkLhLv03KcZhG878YMmvOvqXpEqWs=" />
+<link href="../../app.124a72c7db12322f5f8c0a13adedd4ea9da0e60d885c28ab1abb5a9723d71e4c.css" rel="stylesheet" integrity="sha256-Ekpyx9sSMi9fjAoTre3U6p2g5g2IXCirGrtalyPXHkw=" />
 
 
 
@@ -116,8 +116,8 @@ if (!doNotTrack) {
 
 <span class="n">brightness</span> <span class="o">=</span> <span class="p">(</span><span class="n">ratio</span> <span class="o">*</span> <span class="n">brightness_max</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span>
 
-<span class="sb">`ddcutil setvcp 10 </span><span class="si">#{</span><span class="n">brightness</span><span class="si">}</span><span class="sb">`</span></code></pre></div>
-<p>Move the slider and run your script. Sweet! Now all we need is something that will run our script everytime the slider changes. I&rsquo;ll use a Rust program called <code>watchexec</code> which does exactly what you&rsquo;d think - it watches a file for changes and runs a command everytime it does. Time to put all that in a <code>systemd</code> service so it runs on the background at boot. Let&rsquo;s create a new service:</p>
+<span class="sb">`ddcutil setvcp 10 </span><span class="si">#{</span><span class="n">brightness</span><span class="si">}</span><span class="sb">`</span>
+</code></pre></div><p>Move the slider and run your script. Sweet! Now all we need is something that will run our script everytime the slider changes. I&rsquo;ll use a Rust program called <code>watchexec</code> which does exactly what you&rsquo;d think - it watches a file for changes and runs a command everytime it does. Time to put all that in a <code>systemd</code> service so it runs on the background at boot. Let&rsquo;s create a new service:</p>
 <pre><code>[Unit]
 Description=Ghetto brightness control
 [Service]
