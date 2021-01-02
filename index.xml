@@ -69,9 +69,9 @@ It&amp;rsquo;s absolutely brilliant with size comparable to the original mac min
       <pubDate>Mon, 06 Jan 2020 01:19:00 +0100</pubDate>
       
       <guid>/posts/apple-photos/</guid>
-      <description>All the information here was compiled by me looking at the library folder, examining the sqlite databases, monitoring changes in files, hexdumping, etc. while playing around with my personal photos collection.
-Do what you want with this, but keep in mind it is unofficial and solely based on my personal observations, therefore it is incomplete and some parts could be plain wrong.
-Apple may change how their software works at any time and without notice.</description>
+      <description>UPDATE (01-01-2021): The findings below have led to the announcement of an app which exposes an API and a web viewer for the albums in your Photos.app
+ All the information here was compiled by me looking at the library folder, examining the sqlite databases, monitoring changes in files, hexdumping, etc. while playing around with my personal photos collection.
+Do what you want with this, but keep in mind it is unofficial and solely based on my personal observations, therefore it is incomplete and some parts could be plain wrong.</description>
     </item>
     
   </channel>
