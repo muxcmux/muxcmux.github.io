@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 20 May 2020 17:23:17 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2021 01:19:00 +0100</lastBuildDate>
     
 	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Announcing xpoz: An API and a web viewer for Apple&#39;s Photos.app</title>
+      <link>/posts/xpoz-an-api-for-apple-photos-app/</link>
+      <pubDate>Fri, 01 Jan 2021 01:19:00 +0100</pubDate>
+      
+      <guid>/posts/xpoz-an-api-for-apple-photos-app/</guid>
+      <description>Let&amp;rsquo;s kick off the new year with something positive! I&amp;rsquo;m happy to announce
+ xpoz: An API and a web viewer for your Apple Photos.app albums.
+ This is the result of some hacking around with Photos.app I did earlier in 2020. After figuring out how things worked more or less, I decided to have a go at writing an API that would expose all the stored metadata and possibly serve the images as well.</description>
+    </item>
     
     <item>
       <title>Ghetto Brightness Control</title>
