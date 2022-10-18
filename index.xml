@@ -6,11 +6,7 @@
     <description>Recent content in Senior software engineer on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 26 Jun 2020 12:40:19 +0100</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 26 Jun 2020 12:40:19 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to !hire a software engineering contractor</title>
       <link>/posts/how-to-not-hire-a-software-engineering-contractor/</link>
@@ -28,8 +24,8 @@ To me, a software contracting job is about bringing in extra resources to help y
       
       <guid>/posts/xpoz-an-api-for-apple-photos-app/</guid>
       <description>Let&amp;rsquo;s kick off the new year with something positive! I&amp;rsquo;m happy to announce
- xpoz: An API and a web viewer for your Apple Photos.app albums.
- This is the result of some hacking around with Photos.app I did earlier in 2020. After figuring out how things worked more or less, I decided to have a go at writing an API that would expose all the stored metadata and possibly serve the images as well.</description>
+xpoz: An API and a web viewer for your Apple Photos.app albums.
+This is the result of some hacking around with Photos.app I did earlier in 2020. After figuring out how things worked more or less, I decided to have a go at writing an API that would expose all the stored metadata and possibly serve the images as well.</description>
     </item>
     
     <item>
@@ -38,8 +34,8 @@ To me, a software contracting job is about bringing in extra resources to help y
       <pubDate>Fri, 26 Jun 2020 16:56:41 +0100</pubDate>
       
       <guid>/work/</guid>
-      <description>Ignition Works / HSBC I joined IW on the recommendation of a colleague I worked with in the past. It&amp;rsquo;s a small consulatancy of ex-Pivotal engineers, who through vmWare, provide support for the CloudFoundry platform at HSBC.
-During my short time at the bank I learned a ton about successfully running a PaaS at scale. It was massive - more than twenty different foundations, deployed over datacenters in 3 different continents.</description>
+      <description>SilkFred Quite the U-turn from my previous gig, SilkFred is a departure from the grievous corporate environment. There are no lengthy processes and just enough change management to be able to ship production code in my first week!
+The typical SilkFred engineer is a senior with a ton of experience behind them. We often wear many hats - sometimes multiple hats at the same time! It&amp;rsquo;s not uncommon to work on a front end task one day and be buried in the tricky warehouse integration code on the next.</description>
     </item>
     
     <item>
@@ -49,7 +45,7 @@ During my short time at the bank I learned a ton about successfully running a Pa
       
       <guid>/posts/ghetto-brightness-control/</guid>
       <description>This is the second post in the series where I&amp;rsquo;m trying to switch away from the mac for a while.
-One of the things I miss is the ability to adjust brightness of my monitor with the multimedia keyboard keys. When at home, my mac is usually hooked up to a 22&amp;rdquo; LG UltraFine, which controls its brightness automatically based on the ambient light sensor on the laptop, or I could adjust it by holding ctrl and using the brigthness keys on my MX Keys keyboard.</description>
+One of the things I miss is the ability to adjust brightness of my monitor with the multimedia keyboard keys. When at home, my mac is usually hooked up to a 22&amp;quot; LG UltraFine, which controls its brightness automatically based on the ambient light sensor on the laptop, or I could adjust it by holding ctrl and using the brigthness keys on my MX Keys keyboard.</description>
     </item>
     
     <item>
@@ -79,7 +75,7 @@ It&amp;rsquo;s absolutely brilliant with size comparable to the original mac min
       
       <guid>/posts/apple-photos/</guid>
       <description>UPDATE (01-01-2021): The findings below have led to the announcement of an app which exposes an API and a web viewer for the albums in your Photos.app
- All the information here was compiled by me looking at the library folder, examining the sqlite databases, monitoring changes in files, hexdumping, etc. while playing around with my personal photos collection.
+All the information here was compiled by me looking at the library folder, examining the sqlite databases, monitoring changes in files, hexdumping, etc. while playing around with my personal photos collection.
 Do what you want with this, but keep in mind it is unofficial and solely based on my personal observations, therefore it is incomplete and some parts could be plain wrong.</description>
     </item>
     
