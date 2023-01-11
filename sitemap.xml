@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/how-to-not-hire-a-software-engineering-contractor/</loc>
-    <lastmod>2021-02-01T15:26:06+00:00</lastmod>
+    <loc>/posts/i-meid-dis-a-commenting-widget-in-rust/</loc>
+    <lastmod>2022-12-25T00:25:04+01:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
+    <lastmod>2022-12-25T00:25:04+01:00</lastmod>
+  </url><url>
+    <loc>/posts/how-to-not-hire-a-software-engineering-contractor/</loc>
     <lastmod>2021-02-01T15:26:06+00:00</lastmod>
   </url><url>
     <loc>/posts/xpoz-an-api-for-apple-photos-app/</loc>

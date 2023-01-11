@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 01 Feb 2021 15:26:06 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Dec 2022 00:25:04 +0100</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I meid dis - a commenting widget in Rust</title>
+      <link>/posts/i-meid-dis-a-commenting-widget-in-rust/</link>
+      <pubDate>Sun, 25 Dec 2022 00:25:04 +0100</pubDate>
+      
+      <guid>/posts/i-meid-dis-a-commenting-widget-in-rust/</guid>
+      <description>🎄 Merry Christmas everybody!
+I have been playing with Rust (again) and made this thing over the holidays where you could paste a javascript include tag in a webpage and it would load a comment section - you might have seen those on other blogs 🤪
+The aim was to get back into learning Rust, and I believe the best way to do it is to try and write a real world app.</description>
+    </item>
+    
     <item>
       <title>How to !hire a software engineering contractor</title>
       <link>/posts/how-to-not-hire-a-software-engineering-contractor/</link>
