@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>Antoni Karasavov </title>
+<title>Antoni Karasavov  | Besedka 0.3 release with some convenience features</title>
 <meta name="viewport" content="width=device-width,minimum-scale=1">
 
 
@@ -23,9 +23,6 @@
 
 
 
-
-<link href="../posts/index.xml" rel="alternate" type="application/rss+xml" title="Antoni Karasavov" />
-<link href="../posts/index.xml" rel="feed" type="application/rss+xml" title="Antoni Karasavov" />
 
 
 
@@ -49,7 +46,7 @@ if (!doNotTrack) {
 <body>
   <header>
   <nav role="navigation">
-    <a href="../" title="Go to the main page">
+    <a href="../../" title="Go to the main page">
       <svg viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient x1="20%" y1="0%" x2="80%" y2="100%" id="grad">
@@ -73,84 +70,55 @@ if (!doNotTrack) {
 </header>
   <main role="main">
     
-<article class="column">
-  <h1>/var/log</h1>
+<article class="column post">
+  <header>
+    <h1>Besedka 0.3 release with some convenience features</h1>
+    <time datetime="2022-12-25T00:25:04&#43;01:00">December 25, 2022</time>
+    <span>in</span>
+    <a href="../../posts/">/var/log</a>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <time class="mono red" datetime="2022-12-25T00:25:04&#43;01:00">December 25, 2022</time>
-        <h3>
-          <a href="../posts/besedka-0-3/">
-            Besedka 0.3 release with some convenience features
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2022-12-25T00:25:04&#43;01:00">December 25, 2022</time>
-        <h3>
-          <a href="../posts/i-meid-dis-a-commenting-widget-in-rust/">
-            I meid dis - a commenting widget in Rust
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2021-02-01T15:26:06Z">February 1, 2021</time>
-        <h3>
-          <a href="../posts/how-to-not-hire-a-software-engineering-contractor/">
-            How to !hire a software engineering contractor
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2021-01-01T01:19:00&#43;01:00">January 1, 2021</time>
-        <h3>
-          <a href="../posts/xpoz-an-api-for-apple-photos-app/">
-            Announcing xpoz: An API and a web viewer for Apple&#39;s Photos.app
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2020-05-20T17:23:17&#43;01:00">May 20, 2020</time>
-        <h3>
-          <a href="../posts/ghetto-brightness-control/">
-            Ghetto Brightness Control
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2020-04-19T00:25:04&#43;01:00">April 19, 2020</time>
-        <h3>
-          <a href="../posts/linux-dev-setup/">
-            Development setup on Linux
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2020-04-08T23:44:15&#43;01:00">April 8, 2020</time>
-        <h3>
-          <a href="../posts/asrock-a300/">
-            Got a new mini PC. What should I do with it?
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <time class="mono red" datetime="2020-01-06T01:19:00&#43;01:00">January 6, 2020</time>
-        <h3>
-          <a href="../posts/apple-photos/">
-            The Apple Photos library
-          </a>
-        </h3>
-      </li>
-    
-  </ul>
+  
+
+  <section class="body"><p>Happy Friday!</p>
+<p>I have just released <a href="https://github.com/muxcmux/besedka/releases/tag/v0.3.1">Besedka 0.3</a> with an
+important convenience update, which was meant to ship with the initial release, but I never got
+round to doing it.</p>
+<p>This release adds a modal dialog with a list of unreviewed comments, which can be opened by clicking
+on the orange notification bell by the side of the moderation controls. This is only available to
+moderators and will only be visible if there are any comments that need your attention.</p>
+<p>The unreviewed list of comments reuses the same code as the normal comments so all controls - edit,
+approve and delete are still there. Messages are gouped by page with a link to it and are scoped to
+the current site (or config). This makes it super easy to review all comments for the site from a
+single place.</p>
+<p>Let me know what you think in the comment section below 👇!</p>
+</section>
+
+  
+  
+
+
+
+  <section class="comments">
+    <link rel="stylesheet" href="https://besedka.tonkata.com:6353/themes/default.css">
+<style>
+.besedka-comment-preview {
+  min-height: calc(75px - var(--type-base));
+}
+.besedka-anonymous-user .besedka-comment-preview {
+  min-height: calc(116px - var(--type-base));
+}
+</style>
+<script type="text/javascript" src="https://besedka.tonkata.com:6353/comments.js"></script>
+<div id="besedka" data-api="https://besedka.tonkata.com:6353"></div>
+
+  </section>
+
+  <aside>
+
+
+
+</aside>
 </article>
 
   </main>
@@ -178,7 +146,7 @@ if (!doNotTrack) {
 </footer>
   
 
-<script type="text/javascript" src="../app.d8ec73ded399a55e8636bc94fba84ccf0d3f59b61acc9114da520b7f7771b64e.js" integrity="sha256-2Oxz3tOZpV6GNryU&#43;6hMzw0/WbYazJEU2lILf3dxtk4="></script>
+<script type="text/javascript" src="../../app.d8ec73ded399a55e8636bc94fba84ccf0d3f59b61acc9114da520b7f7771b64e.js" integrity="sha256-2Oxz3tOZpV6GNryU&#43;6hMzw0/WbYazJEU2lILf3dxtk4="></script>
 </body>
 
 </html>

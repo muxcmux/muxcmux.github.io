@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/posts/besedka-0-3/</loc>
+    <lastmod>2022-12-25T00:25:04+01:00</lastmod>
+  </url><url>
     <loc>/posts/i-meid-dis-a-commenting-widget-in-rust/</loc>
     <lastmod>2022-12-25T00:25:04+01:00</lastmod>
   </url><url>

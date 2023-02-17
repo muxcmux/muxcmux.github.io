@@ -8,6 +8,17 @@
     <language>en-gb</language>
     <lastBuildDate>Sun, 25 Dec 2022 00:25:04 +0100</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Besedka 0.3 release with some convenience features</title>
+      <link>/posts/besedka-0-3/</link>
+      <pubDate>Sun, 25 Dec 2022 00:25:04 +0100</pubDate>
+      
+      <guid>/posts/besedka-0-3/</guid>
+      <description>Happy Friday!
+I have just released Besedka 0.3 with an important convenience update, which was meant to ship with the initial release, but I never got round to doing it.
+This release adds a modal dialog with a list of unreviewed comments, which can be opened by clicking on the orange notification bell by the side of the moderation controls. This is only available to moderators and will only be visible if there are any comments that need your attention.</description>
+    </item>
+    
+    <item>
       <title>I meid dis - a commenting widget in Rust</title>
       <link>/posts/i-meid-dis-a-commenting-widget-in-rust/</link>
       <pubDate>Sun, 25 Dec 2022 00:25:04 +0100</pubDate>
