@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Fri, 21 Apr 2023 14:25:04 +0100</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jun 2023 14:57:04 +0100</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monitors</title>
+      <link>/posts/monitors/</link>
+      <pubDate>Thu, 08 Jun 2023 14:57:04 +0100</pubDate>
+      
+      <guid>/posts/monitors/</guid>
+      <description>Following my recent screed on keyboards, let me tell you about the monitors I have been using for the past few years.
+When I moved out of the office and started working full-time from home, I quickly realised how much I missed the extra screen estate from an external monitor. At work, I used a basic 1080p Samsung screen. The company I worked for at the time wasn&amp;rsquo;t interested in getting developers expensive peripherals, so we just carried on with whatever was given to us.</description>
+    </item>
+    
     <item>
       <title>Keyboards</title>
       <link>/posts/keyboards/</link>
