@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Senior software engineer on Antoni Karasavov</title>
+    <title>Programmer on Antoni Karasavov</title>
     <link>/</link>
-    <description>Recent content in Senior software engineer on Antoni Karasavov</description>
+    <description>Recent content in Programmer on Antoni Karasavov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Fri, 26 Jun 2020 12:40:19 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -85,8 +85,8 @@ This is the result of some hacking around with Photos.app I did earlier in 2020.
       <pubDate>Fri, 26 Jun 2020 16:56:41 +0100</pubDate>
       
       <guid>/work/</guid>
-      <description>SilkFred Quite the U-turn from my previous gig, SilkFred is a departure from the grievous corporate environment. There are no lengthy processes and just enough change management to be able to ship production code in my first week!
-The typical SilkFred engineer is a senior with a ton of experience behind them. We often wear many hats - sometimes multiple hats at the same time! It&amp;rsquo;s not uncommon to work on a front end task one day and be buried in the tricky warehouse integration code on the next.</description>
+      <description>Builder.AI I worked here for just shy of two years as a Senior Software Engineer. My team was mainly responsible for maintaining about 400 Rails engines - that is keeping their dependencies up to date, carrying out security patches, and making them compatible with latest ruby versions.
+Apart from this, I worked on several other way more interesting projects that enabled other teams to do their work, like creating a custom build tool on top of Bundler, Rails templates, and a ruby AST parser used in the process of assembling a complete client application.</description>
     </item>
     
     <item>
